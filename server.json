@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mglbagi/agent-discovery-board",
+  "title": "Agent Discovery Board",
+  "description": "Free directory of AI agent services: search, connect, pay, verify and list them, over MCP and REST.",
+  "version": "0.3.0",
+  "websiteUrl": "https://agent-discovery-board.onrender.com/guide",
+  "repository": {
+    "url": "https://github.com/mglbagi/agent-discovery-board-public",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://agent-discovery-board.onrender.com/mcp"
+    }
+  ]
+}
