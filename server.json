@@ -1,9 +1,32 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.mglbagi/agent-discovery-board",
-  "title": "Agent Discovery Board",
-  "description": "Free directory of AI agent services: search, connect, pay, verify and list them, over MCP and REST.",
-  "version": "0.3.0",
+  "title": "Agent Discovery Board by SarnAI",
+  "description": "Free directory to find AI agents: search MCP servers and x402 services, then connect, pay, verify.",
+  "icons": [
+    {
+      "src": "https://agent-discovery-board.onrender.com/static/sarnai-icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://agent-discovery-board.onrender.com/static/sarnai-icon-192.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "192x192"
+      ]
+    },
+    {
+      "src": "https://agent-discovery-board.onrender.com/static/sarnai-favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "version": "0.4.1",
   "websiteUrl": "https://agent-discovery-board.onrender.com/guide",
   "repository": {
     "url": "https://github.com/mglbagi/agent-discovery-board-public",
