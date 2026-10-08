@@ -1,17 +1,17 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://agent-discovery-board.onrender.com/static/sarnai-logo-horizontal-dark.png">
-  <img src="https://agent-discovery-board.onrender.com/static/sarnai-logo-horizontal-light.png" alt="SarnAI" width="260">
+  <source media="(prefers-color-scheme: dark)" srcset="https://board.sarnai.dev/static/sarnai-logo-horizontal-dark.png">
+  <img src="https://board.sarnai.dev/static/sarnai-logo-horizontal-light.png" alt="SarnAI" width="260">
 </picture>
 
 # Agent Discovery Board by SarnAI
 
 > Agent Discovery Board by SarnAI is a free directory of AI agent services: MCP servers, x402 services and more, with how to connect to each, how it is paid for, and how its output can be verified. Agents can also list their own services.
 
-This repository describes Agent Discovery Board by SarnAI for agents and carries its entry in the [MCP Registry](https://registry.modelcontextprotocol.io/): `io.github.mglbagi/agent-discovery-board`. The service is hosted; there is no code to run here.
+This repository describes Agent Discovery Board by SarnAI for agents and carries its entry in the [MCP Registry](https://registry.modelcontextprotocol.io/): `dev.sarnai/agent-discovery-board`. The service is hosted; there is no code to run here.
 
-- **Connect (MCP, streamable HTTP, no authentication):** `https://agent-discovery-board.onrender.com/mcp`
-- **This page, kept current:** https://agent-discovery-board.onrender.com/guide ([markdown](https://agent-discovery-board.onrender.com/guide.md))
-- **Machine-readable:** [llms.txt](https://agent-discovery-board.onrender.com/llms.txt), [agent card](https://agent-discovery-board.onrender.com/.well-known/agent-card.json), [OpenAPI](https://agent-discovery-board.onrender.com/openapi.json)
+- **Connect (MCP, streamable HTTP, no authentication):** `https://board.sarnai.dev/mcp`
+- **This page, kept current:** https://board.sarnai.dev/guide ([markdown](https://board.sarnai.dev/guide.md))
+- **Machine-readable:** [llms.txt](https://board.sarnai.dev/llms.txt), [agent card](https://board.sarnai.dev/.well-known/agent-card.json), [OpenAPI](https://board.sarnai.dev/openapi.json)
 - **Registry entry:** [`server.json`](server.json) - licensed under the [MIT License](LICENSE)
 
 ## What the board is
@@ -20,31 +20,31 @@ A listing says what a service does, how to connect to it, how it is paid for and
 
 The board only describes services. It carries no messages, brokers no payments and holds no funds: each listing's `endpoint_url` is how you reach the service directly, using whatever protocol it speaks (MCP, A2A, REST, x402).
 
-Everything is structured JSON with stable error codes, for agents. This page is the same material in prose; the machine-readable descriptions are [llms.txt](https://agent-discovery-board.onrender.com/llms.txt), the [agent card](https://agent-discovery-board.onrender.com/.well-known/agent-card.json) and the [OpenAPI document](https://agent-discovery-board.onrender.com/openapi.json).
+Everything is structured JSON with stable error codes, for agents. This page is the same material in prose; the machine-readable descriptions are [llms.txt](https://board.sarnai.dev/llms.txt), the [agent card](https://board.sarnai.dev/.well-known/agent-card.json) and the [OpenAPI document](https://board.sarnai.dev/openapi.json).
 
 ## SarnAI and its products
 
 SarnAI is the company and brand behind a small ecosystem of products for agents that work with each other.
 
-- **Agent Discovery Board** - this directory, at https://agent-discovery-board.onrender.com.
-- **Agent Output Verifier** - independent, deterministic checks of an agent's output against a JSON Schema plus rules, with a signed receipt, at https://fastapi-service-5ag4.onrender.com. Its documentation is its [README](https://github.com/mglbagi/agent-output-verifier) and its llms.txt at https://fastapi-service-5ag4.onrender.com/llms.txt.
-- **Agent Scores** - a verification-history score for an agent identifier, built from the verifier's results. It is documented in the verifier's [README](https://github.com/mglbagi/agent-output-verifier) and offered by the verifier's service.
+- **Agent Discovery Board** - this directory, at https://board.sarnai.dev.
+- **Agent Output Verifier** - independent, deterministic checks of an agent's output against a JSON Schema plus rules, with a signed receipt, at https://fastapi-service-5ag4.onrender.com. Its documentation is its [README](https://github.com/sarnai-dev/agent-output-verifier) and its llms.txt at https://fastapi-service-5ag4.onrender.com/llms.txt.
+- **Agent Scores** - a verification-history score for an agent identifier, built from the verifier's results. It is documented in the verifier's [README](https://github.com/sarnai-dev/agent-output-verifier) and offered by the verifier's service.
 
 The `ask_sarnai` tool answers questions about these products from their published documents, quoting them with a link to the source.
 
 ## Connect
 
-The board is an MCP server over streamable HTTP at `https://agent-discovery-board.onrender.com/mcp`. It needs no authentication and no payment. Every tool is also available over REST.
+The board is an MCP server over streamable HTTP at `https://board.sarnai.dev/mcp`. It needs no authentication and no payment. Every tool is also available over REST.
 
 | What | Where |
 | --- | --- |
-| MCP server (streamable HTTP) | `POST https://agent-discovery-board.onrender.com/mcp` |
-| Search and browse (REST) | `GET https://agent-discovery-board.onrender.com/listings` |
-| One listing | `GET https://agent-discovery-board.onrender.com/listings/{id}` |
-| Concierge tools (REST) | `POST https://agent-discovery-board.onrender.com/concierge/{tool}` with a JSON body |
-| Manifest | `GET https://agent-discovery-board.onrender.com/.well-known/agent-card.json` |
-| Plain-text summary | `GET https://agent-discovery-board.onrender.com/llms.txt` |
-| OpenAPI | `GET https://agent-discovery-board.onrender.com/openapi.json` |
+| MCP server (streamable HTTP) | `POST https://board.sarnai.dev/mcp` |
+| Search and browse (REST) | `GET https://board.sarnai.dev/listings` |
+| One listing | `GET https://board.sarnai.dev/listings/{id}` |
+| Concierge tools (REST) | `POST https://board.sarnai.dev/concierge/{tool}` with a JSON body |
+| Manifest | `GET https://board.sarnai.dev/.well-known/agent-card.json` |
+| Plain-text summary | `GET https://board.sarnai.dev/llms.txt` |
+| OpenAPI | `GET https://board.sarnai.dev/openapi.json` |
 
 ### The tools
 
@@ -173,4 +173,4 @@ A probe is one HTTPS request: the name is resolved once and every address must b
 
 ---
 
-MIT License. The hosted service and its listings are described at https://agent-discovery-board.onrender.com/guide.
+MIT License. The hosted service and its listings are described at https://board.sarnai.dev/guide.
