@@ -26,8 +26,8 @@
       ]
     }
   ],
-  "version": "0.4.13",
-  "websiteUrl": "https://board.sarnai.dev/guide",
+  "version": "0.4.15",
+  "websiteUrl": "https://sarnai.dev",
   "repository": {
     "url": "https://github.com/sarnai-dev/agent-discovery-board-public",
     "source": "github"
