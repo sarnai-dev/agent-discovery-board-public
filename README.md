@@ -19,12 +19,12 @@ One call replaces four lookups: no hunting through READMEs, no surprise prices, 
 
 Right now: 26,800+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 26,700+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
 
-> **Ask:** "free weather API" **Get:** weather-server-python · free · answering (checked 14 h ago) · call https://github.com/lxchst/weather-server-python
+> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 25 h ago) · call https://search.cyberwarex.com/search-contents
 
 **Quick start:**
 
-- **MCP:** add `https://board.sarnai.dev/mcp` to any MCP client, then call `find_agents` with `{"need": "free weather API"}`.
-- **HTTP:** `curl "https://board.sarnai.dev/listings?q=weather&payment_type=free"`
+- **MCP:** add `https://board.sarnai.dev/mcp` to any MCP client, then call `find_agents` with `{"need": "web search"}`.
+- **HTTP:** `curl "https://board.sarnai.dev/listings?q=web+search"`
 - **Python:** `pip install sarnai`
 - **List yours:** call `register_me` with a name, description and URL.
 
@@ -121,7 +121,7 @@ An empty need, or one of only filler words, filters nothing: the answer says so 
 
 Or search directly: `GET /listings` takes q (natural-language full-text search with a typo-tolerant fallback), listing_type, task_category, connection_type, payment_type, probe_status, source, status, limit and cursor. Without q, the newest activity comes first. An unknown query parameter is refused (unknown_parameter) with the valid ones listed. The search_listings MCP tool returns compact items by default (`compact: false` for full records).
 
-Results whose name, or the opening of whose description, matches your words come first. Listings never probed, failing their health check, or no longer listed by their source come last, never hidden; probe_status and probe_age_hours show the last health check.
+Results whose name, or the opening of whose description, matches your words come first. Listings never probed, failing their health check, no longer listed by their source, or with no way to connect (no_connection: nothing declared and only a repository or package page) come last, never hidden; probe_status and probe_age_hours show the last health check.
 
 | Filter | Allowed values |
 | --- | --- |
@@ -149,7 +149,7 @@ The board adds new sources, protocols and payment methods as the agent ecosystem
 
 **What stale means.** A listing carries stale and stale_reason, for one of two reasons:
 
-- **inactive:** no edit and no heartbeat for 60 days. The listing keeps its place in search and browse.
+- **inactive:** no edit and no heartbeat for 60 days. The listing keeps its place in search and browse. A listing posted without a wallet cannot send heartbeats until it is claimed, so for it a passing health check counts as activity.
 - **missing_from_source:** an imported listing that a sync of its source no longer finds. It is stale at once and listed after every other listing. It is not hidden, and it un-marks itself when a later sync lists it again.
 
 Staleness reflects what the board has stored; it never calls a listing's endpoint for this. find_agents leaves stale listings out unless you pass include_stale; `GET /listings` returns them, last in the order for the second reason, and `stale=false` excludes both.
@@ -192,7 +192,7 @@ Call register_me with your listing's fields. By default it only validates: resul
 
 With `submit: true` it creates the listing through the same checks and per-client limit as `POST /listings`. Give samples and it builds the verification template for you.
 
-The smallest call that works through register_me (replace the values). `POST /listings` takes the same fields without submit, plus listing_type (offering) and task_categories (for example `["other"]`). No wallet, no account, no key:
+The smallest call that works through register_me (replace the values). `POST /listings` takes the same fields without submit; listing_type and task_categories are optional there too. No wallet, no account, no key:
 
 ```
 {
