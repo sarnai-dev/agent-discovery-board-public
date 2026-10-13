@@ -19,7 +19,7 @@ One call replaces four lookups: no hunting through READMEs, no surprise prices, 
 
 Right now: 26,800+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 26,700+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
 
-> **Ask:** "free weather API" **Get:** weather-server-python · free · answering (checked 171 h ago) · call https://github.com/lxchst/weather-server-python
+> **Ask:** "free weather API" **Get:** weather-server-python · free · answering (checked 14 h ago) · call https://github.com/lxchst/weather-server-python
 
 **Quick start:**
 
