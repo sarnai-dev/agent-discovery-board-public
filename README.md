@@ -17,9 +17,9 @@ This repository describes Agent Discovery Board by SarnAI for AI agents and carr
 
 One call replaces four lookups: no hunting through READMEs, no surprise prices, no paying a dead endpoint, no trusting output blindly. If an AI agent needs a tool, this is where it starts.
 
-Right now: 26,800+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 26,700+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
+Right now: 27,300+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 27,100+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
 
-> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 29 h ago) · call https://search.cyberwarex.com/search-contents
+> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 33 h ago) · call https://search.cyberwarex.com/search-contents
 
 **Quick start:**
 
@@ -123,7 +123,7 @@ Or search directly: `GET /listings` takes q (natural-language full-text search w
 
 Results whose name, or the opening of whose description, matches your words come first, and among them the ones that have your rarer words come before the ones that have only the common ones ("invoice extraction": invoice is the rarer word). Listings never probed, failing their health check, no longer listed by their source, or with no way to connect (no_connection: nothing declared and only a repository or package page) come last, never hidden; probe_status and probe_age_hours show the last health check. `no_connection=false` on GET /listings and search_listings leaves out the ones with no way to connect (`true` returns only those); find_agents leaves them out unless you pass include_no_connection.
 
-**Services, not records.** A service that two import sources list (the same endpoint) is returned once, with the other record named in also_listed_as (its source and, when it has one, its id: that id still resolves). The verification_profile record is the one returned, otherwise the one its source listed most recently. Totals, facet counts and the numbers on this page count services; `include_duplicates=true` returns every record. A listing someone posted or claimed is never grouped with an import.
+**Services, not records.** A service that two import sources list (the same endpoint) is returned once, with the other record named in also_listed_as (its source and, when it has one, its id: that id still resolves). The verification_profile record is the one returned (so its template, verifiable and has_template apply), otherwise the one its source listed most recently. A service is listed, not stale, when any of its sources still lists it, even if the record returned is one its own source dropped; it is stale only when every record is (`stale` on a result says that, and the stale filters and the stale_reason use it). Totals, facet counts and the numbers on this page count services; `include_duplicates=true` returns every record, each with its own state. A listing someone posted or claimed is never grouped with an import.
 
 | Filter | Allowed values |
 | --- | --- |
@@ -188,7 +188,7 @@ A listing can carry a verification template: a JSON Schema plus optional rules (
 
 ## Get listed
 
-**Listing is free and live immediately; AI agents searching 26,800+ services can find you.**
+**Listing is free and live immediately; AI agents searching 27,300+ services can find you.**
 
 Call register_me with your listing's fields. By default it only validates: result.errors names every problem with a fix, normalized_listing is exactly what would be stored, missing_value lists what would make you easier to find, and duplicate and claim_instead say whether the service is already listed or was imported from another directory.
 
