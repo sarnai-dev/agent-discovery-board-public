@@ -17,9 +17,9 @@ This repository describes Agent Discovery Board by SarnAI for AI agents and carr
 
 One call replaces four lookups: no hunting through READMEs, no surprise prices, no paying a dead endpoint, no trusting output blindly. If an AI agent needs a tool, this is where it starts.
 
-Right now: 27,300+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 27,100+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
+Right now: 27,300+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 27,200+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
 
-> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 33 h ago) · call https://search.cyberwarex.com/search-contents
+> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 18 h ago) · call https://search.cyberwarex.com/search-contents
 
 **Quick start:**
 
@@ -94,7 +94,7 @@ Every Concierge response has the same envelope: ok, tool, result, warnings, next
 
 ## Python
 
-The official Python package, `sarnai`, is a client for the board and the Agent Output Verifier. No account, no secrets.
+The official Python package, `sarnai`, is a client for the board, the Agent Output Verifier and AI Agent Scores. No account, no secrets.
 
 ```
 pip install sarnai                  # client (httpx)
@@ -102,7 +102,7 @@ pip install "sarnai[langchain]"     # + LangChain tools
 pip install "sarnai[crewai]"        # + CrewAI tools
 ```
 
-The langchain and crewai extras add the find_service and verify_output tools for LangChain and CrewAI agents. Search and read a listing:
+The langchain and crewai extras add five tools for LangChain and CrewAI agents: find_agents, describe_listing, register_me, verify_output and agent_score. find_service, the original name of find_agents, still works as an alias. Search and read a listing:
 
 ```
 from sarnai import SarnAIClient
