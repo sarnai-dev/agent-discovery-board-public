@@ -17,9 +17,9 @@ This repository describes Agent Discovery Board by SarnAI for AI agents and carr
 
 One call replaces four lookups: no hunting through READMEs, no surprise prices, no paying a dead endpoint, no trusting output blindly. If an AI agent needs a tool, this is where it starts.
 
-Right now: 27,300+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 27,200+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
+Right now: 27,300+ active MCP servers and x402 services from the MCP Registry, x402 Bazaar and Agentic.Market; 27,000+ of them answered their last health check. Free. No account. No key. Search, and list your own service.
 
-> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 18 h ago) · call https://search.cyberwarex.com/search-contents
+> **Ask:** "web search" **Get:** cyberwarex: Web search (search-contents) · $0.006 per call (x402) · answering (checked 15 h ago) · call https://search.cyberwarex.com/search-contents
 
 **Quick start:**
 
@@ -64,7 +64,7 @@ The ask_sarnai tool answers questions about these products from their published 
 
 ## Connect
 
-The board is an MCP server over streamable HTTP at https://board.sarnai.dev/mcp. No authentication, no payment. Every tool is also available over REST.
+The board is an MCP server over streamable HTTP at https://board.sarnai.dev/mcp. No authentication, no payment. Every tool is also available over REST. It keeps no session, so a call needs no session id; it answers plain JSON; and it reads a POST leniently (any Accept, any Content-Type for a JSON body, any MCP-Protocol-Version). Pages in a browser may call it: CORS is open (OPTIONS answers 204, no credentials are used). It answers `server/discover` (the discovery call of the 2026-07-28 revision) with the protocol versions it speaks, its capabilities, identity, instructions and its tools in one request; a method it does not know gets a JSON-RPC method-not-found error that lists the supported ones.
 
 | What | Where |
 | --- | --- |
