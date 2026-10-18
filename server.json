@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "dev.sarnai/agent-discovery-board",
   "title": "Agent Discovery Board by SarnAI",
-  "description": "Free directory to find AI agents: search MCP servers and x402 services, then connect, pay, verify.",
+  "description": "Free directory of MCP servers and x402 APIs for AI agents. Find them, or list your own in one call.",
   "icons": [
     {
       "src": "https://board.sarnai.dev/static/sarnai-icon-512.png",
@@ -26,7 +26,7 @@
       ]
     }
   ],
-  "version": "0.4.22",
+  "version": "0.4.23",
   "websiteUrl": "https://sarnai.dev",
   "repository": {
     "url": "https://github.com/sarnai-dev/agent-discovery-board-public",
